@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:postgresql://db:5432/barberdb
+    username: barber
+    password: barberpass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+minio:
+  url: http://minio:9000
+  bucket: barber-media
+  access-key: minioadmin
+  secret-key: minioadmin
+
+server:
+  port: 8080
