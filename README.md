@@ -1,95 +1,95 @@
 # 💈 Barber
 
-**Barber** è un'applicazione **mobile cross-platform (iOS e Android)** pensata per modernizzare la gestione di barberie. Grazie a una piattaforma integrata, permette a clienti, barbieri e amministratori di interagire in tempo reale, ottimizzando la prenotazione, la gestione dei servizi e l’analisi delle performance.
+**Barber** is a **cross-platform mobile app (iOS and Android)** designed to modernize barber shop management. Thanks to an integrated platform, it allows customers, barbers, and administrators to interact in real time, optimizing appointment booking, service management, and performance analysis.
 
-## ✨ Funzionalità Principali
+## ✨ Main Features
 
-### 👤 Clienti
-- Prenotazione di appuntamenti in tempo reale
-- Visualizzazione servizi, prezzi e disponibilità
-- Gestione del profilo utente
-- Notifiche push per conferme, modifiche e reminder
+### 👤 Customers
+- Real-time appointment booking
+- Viewing services, prices, and availability
+- User profile management
+- Push notifications for confirmations, changes, and reminders
 
-### 💼 Barbieri / Staff
-- Visualizzazione e gestione degli appuntamenti
-- Aggiornamento disponibilità e calendario
-- Ricezione notifiche in tempo reale
-- Upload e gestione immagini portfolio
+### 💼 Barbers / Staff
+- Viewing and managing appointments
+- Updating availability and calendar
+- Receiving real-time notifications
+- Uploading and managing portfolio images
 
-### 🛠️ Amministratori
-- Configurazione di servizi, orari, giorni di chiusura
-- Analisi statistiche dettagliate (prenotazioni, clienti, ricavi)
-- Gestione team e disponibilità
-- Dashboard con metriche e grafici real-time
+### 🛠️ Administrators
+- Configuring services, hours, and closed days
+- Detailed statistical analysis (bookings, customers, revenue)
+- Managing team and availability
+- Dashboard with real-time metrics and charts
 
-## 🧱 Stack Tecnologico
+## 🧱 Technology Stack
 
 ### 🌐 Frontend – Flutter (Mobile)
 
 - **Flutter 3.22**, **Dart 3.3**
 - **State Management**: Riverpod 3 + hooks
 - **Routing**: GoRouter
-- **Networking**: Dio (interceptor, retry)
+- **Networking**: Dio (interceptors, retry)
 - **Forms**: flutter_form_builder, reactive_forms
-- **Autenticazione**: Firebase Auth + OAuth (Google, Apple)
-- **Push Notification**: Firebase Cloud Messaging (FCM)
-- **Storage Locale**: Hive + flutter_secure_storage
+- **Authentication**: Firebase Auth + OAuth (Google, Apple)
+- **Push Notifications**: Firebase Cloud Messaging (FCM)
+- **Local Storage**: Hive + flutter_secure_storage
 - **Media**: image_picker, cached_network_image
-- **Testing**: flutter_test, integration_test, widget test con Mockito
-- **Internazionalizzazione**: flutter_localizations, intl
-- **Accessibilità**: Supporto screen reader e semantics widgets
+- **Testing**: flutter_test, integration_test, widget tests with Mockito
+- **Internationalization**: flutter_localizations, intl
+- **Accessibility**: Screen reader support and semantics widgets
 
 ### 🛠 Backend – Spring Boot
 
 - **Java 24**, **Spring Boot 3.5.3**
 - **Database**: PostgreSQL 15+
-- **Storage immagini**: MinIO o AWS S3 (upload via presigned URLs)
-- **Autenticazione**:
-  - JWT con refresh token e scopes
-  - Delegation OAuth via Firebase (OIDC)
+- **Image Storage**: MinIO or AWS S3 (upload via presigned URLs)
+- **Authentication**:
+  - JWT with refresh token and scopes
+  - OAuth delegation via Firebase (OIDC)
 - **API**: REST (OpenAPI 3.1)
 - **Scheduling**: Spring Scheduler
-- **Sicurezza**: Spring Security, CORS, validazioni input, rate limiting
+- **Security**: Spring Security, CORS, input validations, rate limiting
 - **Monitoring**: Micrometer + Prometheus + Grafana
-- **Logging**: Logback, logging strutturato
-- **Container**: Docker multi-stage build (ARM/x86_64)
-- **Testing**: Unit, integration e contract testing con Mockito + Testcontainers
+- **Logging**: Logback, structured logging
+- **Container**: Multi-stage Docker build (ARM/x86_64)
+- **Testing**: Unit, integration, and contract testing with Mockito + Testcontainers
 
-### ☁️ Infrastruttura & DevOps
+### ☁️ Infrastructure & DevOps
 
-- **Kubernetes** (GKE, EKS o self-hosted)
+- **Kubernetes** (GKE, EKS, or self-hosted)
 - **CI/CD**: GitLab CI + GitOps (GitLab Kubernetes Agent)
-- **Helm**: Charts per deployment configurabili
-- **Secrets Management**: Kubernetes Secrets con crittografia abilitata
-- **Monitoring & Logging**: Prometheus + Grafana, log su stdout
-- **Network Security**: Ingress controller con TLS (cert-manager)
+- **Helm**: Configurable deployment charts
+- **Secrets Management**: Kubernetes Secrets with encryption enabled
+- **Monitoring & Logging**: Prometheus + Grafana, logs on stdout
+- **Network Security**: Ingress controller with TLS (cert-manager)
 
-## 🔜 Tecnologie e Feature da Rimandare (Post-MVP)
+## 🔜 Technologies and Features to Postpone (Post-MVP)
 
-Le seguenti funzionalità non sono necessarie per la prima versione dell’applicazione e potranno essere implementate successivamente:
+The following features are not required for the first app version and can be implemented later:
 
 ### 🔧 Frontend
-- Supporto **OAuth Facebook**
-- Supporto a **WebP** per compressione immagini
-- **Geolocalizzazione** (geolocator, flutter_map / Google Maps SDK)
+- Support for **OAuth Facebook**
+- Support for **WebP** image compression
+- **Geolocation** (geolocator, flutter_map / Google Maps SDK)
 
 ### 🌐 Backend
 - **GraphQL** (Spring GraphQL)
-- **Realtime** tramite WebSocket o SSE (per ora polling)
-- **OpenTelemetry** per tracing distribuito
-- **Log centralizzati** (ELK stack o Loki)
-- **HashiCorp Vault** per gestione avanzata dei secrets
-- **Backup avanzato** (Velero, pgBackRest, Barman)
-- **API Gateway**: Kong / Traefik per rate limiting e autenticazione centralizzata
-- **Autoscaling avanzato**: HPA e VPA
-- **Alerting automatico** via Slack/email/webhook
-- **Cost monitoring** e ottimizzazione risorse cloud
+- **Realtime** via WebSocket or SSE (polling for now)
+- **OpenTelemetry** for distributed tracing
+- **Centralized Logging** (ELK stack or Loki)
+- **HashiCorp Vault** for advanced secrets management
+- **Advanced Backups** (Velero, pgBackRest, Barman)
+- **API Gateway**: Kong / Traefik for centralized rate limiting and authentication
+- **Advanced Autoscaling**: HPA and VPA
+- **Automatic Alerting** via Slack/email/webhook
+- **Cost Monitoring** and cloud resource optimization
 
 ## 📈 Roadmap
 
-- ✅ MVP (prenotazioni, autenticazione, servizi, notifiche)
+- ✅ MVP (booking, authentication, services, notifications)
 - 🔜 Real-time updates via WebSocket
-- 🔜 Dashboard Admin con statistiche e analytics
-- 🔜 Appuntamenti geolocalizzati con mappa
-- 🔜 Supporto a sedi multiple / catene
-- 🔜 Intelligenza artificiale per suggerimenti orari/servizi
+- 🔜 Admin dashboard with statistics and analytics
+- 🔜 Geolocated appointments with map
+- 🔜 Support for multiple locations / chains
+- 🔜 Artificial intelligence for schedule/service suggestions
