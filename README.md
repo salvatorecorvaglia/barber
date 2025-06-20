@@ -41,7 +41,7 @@
 
 ### 🛠 Backend – Spring Boot
 
-- **Java 24**, **Spring Boot 3.5.3**
+- **Java 21**, **Spring Boot 3.5.3**
 - **Database**: PostgreSQL 15+
 - **Image Storage**: MinIO or AWS S3 (upload via presigned URLs)
 - **Authentication**:
