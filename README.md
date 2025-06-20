@@ -22,8 +22,6 @@
 - Gestione team e disponibilità
 - Dashboard con metriche e grafici real-time
 
----
-
 ## 🧱 Stack Tecnologico
 
 ### 🌐 Frontend – Flutter (Mobile)
@@ -95,6 +93,3 @@ Le seguenti funzionalità non sono necessarie per la prima versione dell’appli
 - 🔜 Appuntamenti geolocalizzati con mappa
 - 🔜 Supporto a sedi multiple / catene
 - 🔜 Intelligenza artificiale per suggerimenti orari/servizi
-
----
-
