@@ -1,14 +1,15 @@
-FROM eclipse-temurin:21-jdk as builder
+FROM eclipse-temurin:21-jdk AS builder
 
 WORKDIR /app
 
-COPY ../../../mvnw ./
-COPY ../../../.mvn .mvn
-COPY ../../../pom.xml ./
-COPY ../.. ./src
+COPY mvnw ./
+COPY .mvn .mvn
+COPY pom.xml ./
+COPY src ./src
 
 RUN ./mvnw clean package -DskipTests
 
+# Stage 2: Runtime
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app
