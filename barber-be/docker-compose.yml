@@ -13,19 +13,6 @@ services:
     networks:
       - backend
 
-  pgadmin:
-    image: dpage/pgadmin4:7
-    container_name: pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@barber.local
-      PGADMIN_DEFAULT_PASSWORD: admin123
-    ports:
-      - "8081:80"
-    depends_on:
-      - postgres
-    networks:
-      - backend
-
   minio:
     image: minio/minio:latest
     container_name: minio
