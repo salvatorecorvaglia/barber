@@ -1,6 +1,6 @@
 package com.barber.be.service;
 
-import com.barber.barberbackend.entity.Customer;
+import com.barber.be.entity.Customer;
 import com.barber.be.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

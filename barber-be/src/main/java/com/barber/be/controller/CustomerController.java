@@ -1,12 +1,11 @@
 package com.barber.be.controller;
 
-import com.barber.barberbackend.entity.Customer;
+import com.barber.be.entity.Customer;
 import com.barber.be.service.CustomerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/customers")

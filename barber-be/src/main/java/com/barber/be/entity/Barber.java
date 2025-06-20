@@ -5,14 +5,16 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
-@Table(name = "customers")
+@Table(name = "barbers")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Customer {
+public class Barber {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +32,9 @@ public class Customer {
 
     private String phoneNumber;
 
+    // Disponibilità, portfolio immagini, ecc.
+    // Per semplicità qui non le mettiamo, ma da modellare in futuro
+
+    @OneToMany(mappedBy = "barber")
+    private Set<Appointment> appointments;
 }
