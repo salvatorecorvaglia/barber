@@ -4,7 +4,9 @@ spring:
 
 ---
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
 
   datasource:
     url: jdbc:postgresql://db:5432/barberdb
