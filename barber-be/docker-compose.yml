@@ -1,0 +1,61 @@
+services:
+  backend:
+    build:
+      context: ../../..
+      dockerfile: Dockerfile
+    container_name: barber-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/barberdb
+      SPRING_DATASOURCE_USERNAME: barber
+      SPRING_DATASOURCE_PASSWORD: barberpass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      MINIO_URL: http://minio:9000
+      MINIO_BUCKET: barber-media
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    depends_on:
+      - db
+      - minio
+
+  db:
+    image: postgres:15
+    container_name: barber-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: barberdb
+      POSTGRES_USER: barber
+      POSTGRES_PASSWORD: barberpass
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio:latest
+    container_name: barber-minio
+    command: server --console-address ":9001" /data
+    ports:
+      - "9000:9000"   # API
+      - "9001:9001"   # Console
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio-data:/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: barber-pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@barber.dev
+      PGADMIN_DEFAULT_PASSWORD: adminpass
+    depends_on:
+      - db
+
+volumes:
+  postgres-data:
+  minio-data:
