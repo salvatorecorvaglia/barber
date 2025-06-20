@@ -22,6 +22,8 @@
 - Gestione team e disponibilità
 - Dashboard con metriche e grafici real-time
 
+---
+
 ## 🧱 Stack Tecnologico
 
 ### 🌐 Frontend – Flutter (Mobile)
@@ -31,11 +33,10 @@
 - **Routing**: GoRouter
 - **Networking**: Dio (interceptor, retry)
 - **Forms**: flutter_form_builder, reactive_forms
-- **Autenticazione**: Firebase Auth + OAuth (Google, Apple, Facebook)
+- **Autenticazione**: Firebase Auth + OAuth (Google, Apple)
 - **Push Notification**: Firebase Cloud Messaging (FCM)
 - **Storage Locale**: Hive + flutter_secure_storage
-- **Media**: image_picker, cached_network_image, WebP
-- **Geolocalizzazione**: geolocator, flutter_map / Google Maps SDK
+- **Media**: image_picker, cached_network_image
 - **Testing**: flutter_test, integration_test, widget test con Mockito
 - **Internazionalizzazione**: flutter_localizations, intl
 - **Accessibilità**: Supporto screen reader e semantics widgets
@@ -44,35 +45,56 @@
 
 - **Java 21**, **Spring Boot 3.1**
 - **Database**: PostgreSQL 15+
-- **Storage**: MinIO o AWS S3
+- **Storage immagini**: MinIO o AWS S3 (upload via presigned URLs)
 - **Autenticazione**:
   - JWT con refresh token e scopes
   - Delegation OAuth via Firebase (OIDC)
-- **API**: REST (OpenAPI 3.1), opzione GraphQL (Spring GraphQL)
-- **Realtime**: WebSocket o SSE
-- **Upload Immagini**: Presigned URLs
+- **API**: REST (OpenAPI 3.1)
 - **Scheduling**: Spring Scheduler
 - **Sicurezza**: Spring Security, CORS, validazioni input, rate limiting
-- **Monitoraggio**: Micrometer + Prometheus + Grafana + OpenTelemetry
-- **Logging**: Logback/Log4j2, JSON logging, ELK stack o Loki
-- **Container**: Docker multi-stage build per ARM/x86_64
-- **Testing**: Unit, integration, contract testing con Mockito + Testcontainers
+- **Monitoring**: Micrometer + Prometheus + Grafana
+- **Logging**: Logback, logging strutturato
+- **Container**: Docker multi-stage build (ARM/x86_64)
+- **Testing**: Unit, integration e contract testing con Mockito + Testcontainers
 
----
-
-## ☁️ Infrastruttura & DevOps
+### ☁️ Infrastruttura & DevOps
 
 - **Kubernetes** (GKE, EKS o self-hosted)
 - **CI/CD**: GitLab CI + GitOps (GitLab Kubernetes Agent)
 - **Helm**: Charts per deployment configurabili
-- **Secrets Management**: HashiCorp Vault o Kubernetes Secrets
-- **Autoscaling**: HPA e VPA
-- **Backup & Restore**:
-  - Velero (Kubernetes)
-  - pgBackRest / Barman (PostgreSQL)
-- **API Gateway**: Kong, Traefik o NGINX Ingress
-- **Network Security**: Network policies + TLS (cert-manager)
-- **Storage HA**: MinIO distribuito o AWS S3
-- **Logging/Monitoring**: ELK stack o Loki + Prometheus + Grafana
-- **Alerting**: Slack, email, webhook
-- **Cost Optimization**: Strumenti di analisi costi cloud
+- **Secrets Management**: Kubernetes Secrets con crittografia abilitata
+- **Monitoring & Logging**: Prometheus + Grafana, log su stdout
+- **Network Security**: Ingress controller con TLS (cert-manager)
+
+## 🔜 Tecnologie e Feature da Rimandare (Post-MVP)
+
+Le seguenti funzionalità non sono necessarie per la prima versione dell’applicazione e potranno essere implementate successivamente:
+
+### 🔧 Frontend
+- Supporto **OAuth Facebook**
+- Supporto a **WebP** per compressione immagini
+- **Geolocalizzazione** (geolocator, flutter_map / Google Maps SDK)
+
+### 🌐 Backend
+- **GraphQL** (Spring GraphQL)
+- **Realtime** tramite WebSocket o SSE (per ora polling)
+- **OpenTelemetry** per tracing distribuito
+- **Log centralizzati** (ELK stack o Loki)
+- **HashiCorp Vault** per gestione avanzata dei secrets
+- **Backup avanzato** (Velero, pgBackRest, Barman)
+- **API Gateway**: Kong / Traefik per rate limiting e autenticazione centralizzata
+- **Autoscaling avanzato**: HPA e VPA
+- **Alerting automatico** via Slack/email/webhook
+- **Cost monitoring** e ottimizzazione risorse cloud
+
+## 📈 Roadmap
+
+- ✅ MVP (prenotazioni, autenticazione, servizi, notifiche)
+- 🔜 Real-time updates via WebSocket
+- 🔜 Dashboard Admin con statistiche e analytics
+- 🔜 Appuntamenti geolocalizzati con mappa
+- 🔜 Supporto a sedi multiple / catene
+- 🔜 Intelligenza artificiale per suggerimenti orari/servizi
+
+---
+
