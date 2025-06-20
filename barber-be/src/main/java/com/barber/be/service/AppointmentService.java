@@ -30,7 +30,6 @@ public class AppointmentService {
 
     @Transactional
     public Appointment saveWithRelations(Appointment appointment) {
-        // Carica entità reali dai repository
         Customer customer = customerRepository.findById(appointment.getCustomer().getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
         Barber barber = barberRepository.findById(appointment.getBarber().getId())

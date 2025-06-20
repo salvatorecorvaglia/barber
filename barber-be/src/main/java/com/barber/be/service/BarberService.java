@@ -4,6 +4,7 @@ import com.barber.be.entity.Barber;
 import com.barber.be.repository.BarberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class BarberService {
         return barberRepository.findById(id);
     }
 
+    @Transactional
     public Barber save(Barber barber) {
         return barberRepository.save(barber);
     }

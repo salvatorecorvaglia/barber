@@ -4,6 +4,7 @@ import com.barber.be.entity.Admin;
 import com.barber.be.repository.AdminRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class AdminService {
         return adminRepository.findById(id);
     }
 
+    @Transactional
     public Admin save(Admin admin) {
         return adminRepository.save(admin);
     }
