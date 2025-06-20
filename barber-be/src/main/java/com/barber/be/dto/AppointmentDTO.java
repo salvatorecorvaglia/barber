@@ -1,6 +1,6 @@
 package com.barber.be.dto;
 
-import com.barber.be.entity.Appointment.AppointmentStatus;
+import com.barber.be.enumeration.AppointmentStatusEnum;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -32,5 +32,5 @@ public class AppointmentDTO {
 
     private String notes;
 
-    private AppointmentStatus status;
+    private AppointmentStatusEnum status;
 }

@@ -2,6 +2,7 @@ package com.barber.be.repository;
 
 import com.barber.be.entity.Appointment;
 import com.barber.be.entity.Barber;
+import com.barber.be.enumeration.AppointmentStatusEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
@@ -13,5 +14,5 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
 
     List<Appointment> findByCustomerId(Long customerId);
 
-    List<Appointment> findByStatus(Appointment.AppointmentStatus status);
+    List<Appointment> findByStatus(AppointmentStatusEnum status);
 }

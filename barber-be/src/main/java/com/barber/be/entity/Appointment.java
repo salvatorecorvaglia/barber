@@ -1,5 +1,6 @@
 package com.barber.be.entity;
 
+import com.barber.be.enumeration.AppointmentStatusEnum;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.FutureOrPresent;
 import lombok.*;
@@ -37,14 +38,8 @@ public class Appointment {
     private String notes;
 
     @Enumerated(EnumType.STRING)
-    private AppointmentStatus status;
+    private AppointmentStatusEnum status;
 
-    public enum AppointmentStatus {
-        PENDING,
-        CONFIRMED,
-        CANCELLED,
-        COMPLETED
-    }
 
     public Appointment(Long id) {
         this.id = id;
