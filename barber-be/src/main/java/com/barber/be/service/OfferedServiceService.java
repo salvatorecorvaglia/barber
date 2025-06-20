@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class OfferedServiceService {  // nome diverso, più chiaro
+public class OfferedServiceService {
 
     private final OfferedServiceRepository offeredServiceRepository;
 
