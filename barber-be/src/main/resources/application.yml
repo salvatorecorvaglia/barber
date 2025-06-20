@@ -17,3 +17,13 @@ minio:
   access-key: minioadmin
   secret-key: minioadmin123
   bucket-name: barber-bucket
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    defaultModelsExpandDepth: 1
+    defaultModelExpandDepth: 1
+    displayRequestDuration: true
