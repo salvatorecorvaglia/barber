@@ -1,4 +1,4 @@
-package com.barber.barberbackend.entity;
+package com.barber.be.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -25,7 +25,5 @@ public class Admin {
     @Column(unique = true)
     private String email;
 
-    private String passwordHash;  // gestito con sicurezza esterna
-
-    // Ruoli o permessi specifici si possono aggiungere in futuro
+    private String passwordHash;
 }

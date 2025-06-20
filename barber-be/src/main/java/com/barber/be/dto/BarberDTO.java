@@ -1,31 +1,25 @@
-package com.barber.be.entity;
+package com.barber.be.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-@Entity
-@Table(name = "customers")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Customer {
+public class BarberDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "First name is required")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "Last name is required")
     private String lastName;
 
-    @Email
-    @Column(unique = true)
+    @Email(message = "Email should be valid")
+    @NotBlank(message = "Email is required")
     private String email;
 
     private String phoneNumber;

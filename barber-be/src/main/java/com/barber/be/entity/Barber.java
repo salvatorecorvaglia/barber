@@ -32,9 +32,6 @@ public class Barber {
 
     private String phoneNumber;
 
-    // Disponibilità, portfolio immagini, ecc.
-    // Per semplicità qui non le mettiamo, ma da modellare in futuro
-
     @OneToMany(mappedBy = "barber")
     private Set<Appointment> appointments;
 }

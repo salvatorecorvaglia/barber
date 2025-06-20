@@ -1,34 +1,27 @@
-package com.barber.be.entity;
+package com.barber.be.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "services")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Service {
+public class ServiceDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Column(unique = true)
+    @NotBlank(message = "Service name is required")
     private String name;
 
     private String description;
 
-    @Positive
+    @Positive(message = "Price must be positive")
     private BigDecimal price;
 
-    @Positive
+    @Positive(message = "Duration must be positive")
     private Integer durationMinutes;
 }
