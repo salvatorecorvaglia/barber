@@ -5,13 +5,18 @@ import com.barber.be.repository.BarberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class BarberService {
 
-    BarberRepository barberRepository;
+    private final BarberRepository barberRepository;
+
+    public List<Barber> findAll() {
+        return barberRepository.findAll();
+    }
 
     public Optional<Barber> findById(Long id) {
         return barberRepository.findById(id);
