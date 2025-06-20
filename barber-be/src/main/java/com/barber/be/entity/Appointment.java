@@ -45,4 +45,8 @@ public class Appointment {
         CANCELLED,
         COMPLETED
     }
+
+    public Appointment(Long id) {
+        this.id = id;
+    }
 }

@@ -31,4 +31,8 @@ public class OfferedService {
 
     @Positive
     private Integer durationMinutes;
+
+    public OfferedService(Long id) {
+        this.id = id;
+    }
 }

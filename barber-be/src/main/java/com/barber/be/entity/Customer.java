@@ -29,4 +29,8 @@ public class Customer {
     private String email;
 
     private String phoneNumber;
+
+    public Customer(Long id) {
+        this.id = id;
+    }
 }

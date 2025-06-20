@@ -34,4 +34,9 @@ public class Barber {
 
     @OneToMany(mappedBy = "barber")
     private Set<Appointment> appointments;
+
+    public Barber(Long id) {
+        this.id = id;
+    }
+
 }

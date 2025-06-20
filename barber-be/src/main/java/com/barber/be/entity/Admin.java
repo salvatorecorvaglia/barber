@@ -26,4 +26,8 @@ public class Admin {
     private String email;
 
     private String passwordHash;
+
+    public Admin(Long id) {
+        this.id = id;
+    }
 }
