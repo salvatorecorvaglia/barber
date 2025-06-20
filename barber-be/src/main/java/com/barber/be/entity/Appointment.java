@@ -29,7 +29,7 @@ public class Appointment {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "service_id")
-    private Service service;
+    private OfferedService offeredService;
 
     @FutureOrPresent
     private LocalDateTime appointmentDateTime;

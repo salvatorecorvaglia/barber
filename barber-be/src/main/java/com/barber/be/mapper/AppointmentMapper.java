@@ -2,10 +2,8 @@ package com.barber.be.mapper;
 
 import com.barber.be.dto.AppointmentDTO;
 import com.barber.be.entity.Appointment;
-import com.barber.be.entity.Barber;
-import com.barber.be.entity.Customer;
-import com.barber.be.entity.Service;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface AppointmentMapper {
